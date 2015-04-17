@@ -8,7 +8,6 @@ from .. import unittest
 
 import docker
 import mock
-from six import StringIO
 
 from compose.cli import main
 from compose.cli.main import TopLevelCommand
@@ -120,6 +119,7 @@ class CLITestCase(unittest.TestCase):
             'SERVICE': 'service',
             'COMMAND': None,
             '-e': ['BAR=NEW', 'OTHER=THREE'],
+            '--user': None,
             '--no-deps': None,
             '--allow-insecure-ssl': None,
             '-d': True,
@@ -150,4 +150,3 @@ def make_files(dirname, filenames):
     for fname in filenames:
         with open(os.path.join(dirname, fname), 'w') as f:
             f.write('')
-
