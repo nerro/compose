@@ -1,5 +1,5 @@
 FROM base/archlinux:latest
-RUN pacman -Syu --noconfirm && pacman-db-upgrade && pacman -S --noconfirm \
+RUN pacman-key --refresh-keys && pacman -Syu --noconfirm && pacman-db-upgrade && pacman -S --noconfirm \
     python2 \
     python2-pip \
     git && \
